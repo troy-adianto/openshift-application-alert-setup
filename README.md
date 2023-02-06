@@ -1,0 +1,1 @@
+# openshift-application-alert-setup
