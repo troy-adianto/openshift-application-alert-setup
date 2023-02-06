@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: todo-app-routing
+  namespace: todo-app
+spec:
+  receivers:
+    - name: Default
+#name of the alert receiver/channel
+    - name: critical-alert
+#email address where the alert should be send to
+      emailConfigs:
+        - to: 'ocp-alert@mail.com,ocp-alert2@mail.com'
+  route:
+    groupBy:
+      - job
+    receiver: Default
+    routes:
+#receiver/channel to send the matching alert to
+      - receiver: critical-alert
+        matchers:
+#the list of alert label to match for this receiver
+          - name: severity
+            regex: false
+            value: critical
+          - name: alertname
+            regex: false
+            value: high-cpu-consumptions

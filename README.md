@@ -1,1 +1,2 @@
-# openshift-application-alert-setup
+# openshift application alert setup
+

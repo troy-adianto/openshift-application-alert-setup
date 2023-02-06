@@ -1,0 +1,27 @@
+
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: todo-app-alert
+  namespace: todo-app
+spec:
+  groups:
+    - name: resource-usage-alert
+      rules:
+#Specify alert name and prometheus query expression
+        - alert: high-cpu-consumptions
+          expr: >-
+            sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{namespace='todo-app'})
+            > 0.1
+#Specify the duration the prometheus query expression to return true before the alert is firing.
+          for: 15s
+#Specify the alert name label which can be used by the alert manager routing 
+          labels:
+            severity: critical
+        - alert: no-memory-consumptions
+          expr: >-
+            sum(container_memory_working_set_bytes{container!="",
+            namespace='todo-app'})<10000000
+          for: 15s
+          labels:
+            severity: warning

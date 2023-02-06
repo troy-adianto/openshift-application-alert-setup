@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: todo-app-monitor
+  namespace: todo-app
+spec:
+  endpoints:
+#specify how often the end point will be scraped by prometheus
+    - interval: 30s
+#http path endpoint and target where the prometheus should scrape the metrics
+      path: /q/metrics
+      scheme: http
+      targetPort: 8080
+#Service labels to match which will be monitored by this service monitor
+  selector:
+    matchLabels:
+      app: todo-app

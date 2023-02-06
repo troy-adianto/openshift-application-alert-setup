@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: todo-app-routing
+  namespace: todo-app
+spec:
+  receivers:
+    - name: Default
+    - name: critical-alert
+      slackConfigs:
+        - channel: ocp-alert
+  route:
+    groupBy:
+      - job
+    receiver: Default
+    routes:
+      - matchers:
+          - name: severity
+            regex: false
+            value: critical
+        receiver: critical-alert
