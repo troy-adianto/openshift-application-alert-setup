@@ -7,26 +7,26 @@
   
 * Configure Global Email Server/Slack
   
-  [Configure alert receivers] (https://docs.openshift.com/container-platform/4.11/monitoring/managing-alerts.html#configuring-alert-receivers_managing-alerts)
+  [Configure alert receivers](https://docs.openshift.com/container-platform/4.11/monitoring/managing-alerts.html#configuring-alert-receivers_managing-alerts)
 
 * Create Role Binding to Developer in the namespace
 
-   [developer-rolebinding.yaml] (https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/admin/developer-rolebinding.yaml)
+   [developer-rolebinding.yaml](https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/admin/developer-rolebinding.yaml)
    
    
 # Developer Task (by Developer Admin)
 
 * Create Application Service Monitor
    
-   [service-monitor-sample.yaml] (https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/dev/service-monitor-sample.yaml)
+   [service-monitor-sample.yaml](https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/dev/service-monitor-sample.yaml)
 
 * Create Application Alert Rule
    
-   [prometheus-rule-sample] (https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/dev/prometheus-rule-sample.yaml)
+   [prometheus-rule-sample](https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/dev/prometheus-rule-sample.yaml)
 
 * Create Alert Routing
   
-   [alert-manager-routing-sample.yaml (email)] (https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/dev/alert-manager-routing-sample.yaml)
+   [alert-manager-routing-sample.yaml (email)](https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/dev/alert-manager-routing-sample.yaml)
 
   [alert-manager-routing-sample-slack-yaml (slack)](https://github.com/troy-adianto/openshift-application-alert-setup/blob/main/dev/alert-manager-routing-sample-slack.yaml)
 
