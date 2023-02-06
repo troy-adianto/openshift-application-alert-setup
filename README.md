@@ -1,4 +1,5 @@
-# openshift application alert setup
+# OPENSHIFT APPLICATION ALERT SETUP
+Tested in OpenShift Container Platform 4.11
 
 # Cluster Task (by Cluster Admin)
 * Enable User Workload Monitoring & Alert Manager
@@ -15,6 +16,8 @@
    
    
 # Developer Task (by Developer Admin)
+
+[Demo Video](https://www.youtube.com/watch?v=xquU48TgS6E)
 
 * Create Application Service Monitor
    
